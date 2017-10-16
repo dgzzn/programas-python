@@ -9,7 +9,8 @@ def cemRedondo(valor):  # 100, 200, 500
 
 def notasDez(valor):
     notas_10 = valor // 10
-    print('{} nota(s) de R$10'.format(notas_10))
+    if notas_10 > 0:
+        print('{} nota(s) de R$10'.format(notas_10))
     menorCinquenta(valor % 10)
 
 def menorCinquenta(valor):  # recebe o resto do modulo por cem
@@ -22,7 +23,8 @@ def menorCinquenta(valor):  # recebe o resto do modulo por cem
         print('{} nota(s) de R$5'.format(notas_5))
     elif valor % 10 == 10:  # se for exatamente igual a 10, dá nota de 10
         notas_10 = valor % 10
-        print('{} nota(s) de R$10'.format(notas_10))
+        if notas_10 > 0:
+            print('{} nota(s) de R$10'.format(notas_10))
     elif 5 < valor % 10 < 10:  # se for maior que 5 e menor que 10
         notas_1 = valor % 5
         notas_5 = int(5/(valor-notas_1))  # pega o valor e dá a nota de 5 e subtrai os 5 do valor
